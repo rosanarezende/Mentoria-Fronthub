@@ -1,0 +1,16 @@
+{
+    "root": true,
+    "extends": [
+        "@resultadosdigitais/eslint-config-react",
+        "prettier",
+        "@resultadosdigitais/eslint-config-g11n"
+    ],
+    "overrides": [
+        {
+            "files": "./src/**/*",
+            "rules": {
+                "compat/compat": "off"
+            }
+        }
+    ]
+}

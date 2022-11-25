@@ -1,0 +1,19 @@
+version: 2
+registries:
+  npm-registry-registry-jfrog-org:
+    type: npm-registry
+    url: https://resultadosdigitais.jfrog.io/resultadosdigitais/api/npm/npm/
+    token: "${{secrets.NPM_REGISTRY_REGISTRY_JFROG_ORG_TOKEN}}"
+
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+      time: "06:00"
+      timezone: Etc/UCT
+    pull-request-branch-name:
+      separator: "-"
+    open-pull-requests-limit: 10
+    registries:
+      - npm-registry-registry-jfrog-org
