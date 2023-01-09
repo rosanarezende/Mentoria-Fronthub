@@ -1,8 +1,8 @@
-# Envio de parâmetros de exeperimentos
+# Envio de parâmetros de experimentos
 
 ## Cenário atual
 
-As propriedades relacionadas a cada experimento é enviada nas views de cada MFE e, quando necessária em mais de uma tela (como foi o caso do Desconto Basic) enviada em mais de um arquivo.
+As propriedades relacionadas a cada experimento são enviadas nas views de cada MFE e, quando necessária em mais de uma tela (como foi o caso do Desconto Basic) enviadas em mais de um arquivo.
 
 <br>
 
