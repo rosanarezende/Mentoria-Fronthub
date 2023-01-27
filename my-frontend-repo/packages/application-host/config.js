@@ -1,5 +1,21 @@
 var convict = require('convict');
 
+// Para usar validações que não são nativas do convict podemos:
+
+// 1 - usar a lib convict-format-with-validator (email, url e ipAdress)
+convict.addFormat(require('convict-format-with-validator').url);
+
+// 2 - Adicionar validações customizadas
+// convict.addFormat({
+//   name: 'url',
+//   validate: function (val) {
+//     if (!val.match(/^https?:\/\/.+/)) {
+//       throw new Error('Must be a valid URL');
+//     }
+//   }
+// });
+
+
 // Define a schema
 var config = convict({
   env: {
@@ -18,12 +34,26 @@ var config = convict({
   fronthub: {
     url: {
       doc: 'The URL of the fronthub service.',
-      format: String,
-      default: 'https://front-hub-service-staging.rdops.systems',
+      format: 'url',
+      default: 'http://front-hub-service-staging.rdops.systems',
       env: 'FRONTHUB_URL',
-    }
+    },
+    version: {
+      doc: 'The version of the fronthub service.',
+      format: String,
+      default: '6.2.2', // TODO: mudar, não está funcionando
+      env: 'FRONTHUB_VERSION',
+    },
+    require_version: {
+      doc: 'The version of the require fronthub service.',
+      format: String,
+      default: '6.2.2', // TODO: mudar, não está funcionando
+      env: 'FRONTHUB_REQUIRE_VERSION',
+    },
   }
 });
+
+
 
 // para sobrescrevera variável de ambiente no script de start do package.json
 // PORT=5000 yarn start 
@@ -35,4 +65,4 @@ var config = convict({
 // Perform validation
 config.validate({allowed: 'strict'});
 
-module.exports = config;
+module.exports = {...config.getProperties()};
