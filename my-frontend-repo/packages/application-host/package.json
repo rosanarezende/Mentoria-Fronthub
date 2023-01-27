@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "open-cli http://localhost:8080 && nodemon ./bin/www"
+    "start": "open-cli http://localhost:8080 && nodemon app.js"
   },
   "dependencies": {
     "convict": "^6.2.3",
