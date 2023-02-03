@@ -4,7 +4,8 @@
   <title>{{title}}</title>
   <link rel="stylesheet" href="/stylesheets/style.css" />
   {{!-- 1) carregar script => aqui fazemos o require do front-hub --}}
-  <link rel="preload" href="{{FRONTHUB_URL}}/assets/front-hub/{{FRONTHUB_VERSION}}/require@{{FRONTHUB_REQUIRE_VERSION}}.js" as="script">
+  <link rel="preload"
+    href="{{FRONTHUB_URL}}/assets/front-hub/{{FRONTHUB_VERSION}}/require@{{FRONTHUB_REQUIRE_VERSION}}.js" as="script">
 </head>
 
 <body>
@@ -14,12 +15,8 @@
   {{! 2) inicializa a variável global fronthub }}
   <script>
     !function (t, n, e, r, o, s, c) {
-      t.__fronthub__ = o, t[o] = t[o] || function () { (t[o].q = t[o].q || []).push(arguments) }, 
-      s = n.createElement(e), c = n.getElementsByTagName(e)[0], 
-      s.async = 1, s.src = '{{FRONTHUB_URL}}/assets/front-hub/{{FRONTHUB_VERSION}}/require@{{FRONTHUB_REQUIRE_VERSION}}.js', 
-      c.parentNode.insertBefore(s, c)
-    }
-    (window, document, 'script', 0, 'fronthub'); // fronthub é o nome da variável global q usamos em todo o projeto
+      t.__fronthub__ = o, t[o] = t[o] || function () { (t[o].q = t[o].q || []).push(arguments) }, s = n.createElement(e), c = n.getElementsByTagName(e)[0], s.async = 1, s.src = '{{FRONTHUB_URL}}/assets/front-hub/{{FRONTHUB_VERSION}}/require@{{FRONTHUB_REQUIRE_VERSION}}.js', c.parentNode.insertBefore(s, c)
+    }(window, document, 'script', 0, 'fronthub'); // fronthub é o nome da variável global q usamos em todo o projeto
   </script>
 
   {{!-- 3) configurar o fronthub --}}
@@ -27,28 +24,26 @@
   {{!-- usamos o context por ser requisito da navbar --}}
   <script>
     fronthub("configure", {
-      repository: 'https:front-hub-service-staging.rdops.systems',
+      repository: '{{ FRONTHUB_URL }}',
       intl: {
-        language: "pt-BR",
+        language: "en-US",
         debug: false,
       },
       context: {
         user: {
-          id: "1234",
-          firstName: "Rosana",
-          lastName: "Rezende",
-          email: "rosanarezende.com@gmail.com",
+          id: "229734",
+          firstName: "Cleiton Gomes Loiola",
+          lastName: "",
+          email: "cleiton.gomes@resultadosdigitais.com.br",
           role: "OWNER",
           account: {
-            requise version
-              createdAt: "2022-11-25 16:00:00 -0300",
-          },
-        },
-      },
-      domains: {
-        plg: {
-          experiments: {
-            someXP: 'variant',
+            name: "http://www.meio.com.br",
+            id: "156211",
+            plan: {
+              status: "active",
+              planName: "Pro",
+              createdAt: "2020-04-03 17:36:11 -0300",
+            },
           },
         },
       },

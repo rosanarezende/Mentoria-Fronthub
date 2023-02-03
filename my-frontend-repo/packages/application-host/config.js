@@ -35,19 +35,19 @@ var config = convict({
     url: {
       doc: 'The URL of the fronthub service.',
       format: 'url',
-      default: 'http://front-hub-service-staging.rdops.systems',
+      default: 'https://front-hub-service-staging.rdops.systems',
       env: 'FRONTHUB_URL',
     },
     version: {
       doc: 'The version of the fronthub service.',
       format: String,
-      default: '6.2.2', // TODO: mudar, não está funcionando
+      default: '6.2.3', // TODO: mudar, não está funcionando
       env: 'FRONTHUB_VERSION',
     },
     require_version: {
       doc: 'The version of the require fronthub service.',
       format: String,
-      default: '6.2.2', // TODO: mudar, não está funcionando
+      default: '6.2.3', // TODO: mudar, não está funcionando
       env: 'FRONTHUB_REQUIRE_VERSION',
     },
   }
