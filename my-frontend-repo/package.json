@@ -23,6 +23,6 @@
     "@resultadosdigitais/translator-manager"
   ],
   "dependencies": {
-    "lerna": "6.0.3"
+    "lerna": "6.4.1"
   }
 }
