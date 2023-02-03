@@ -41,13 +41,13 @@ var config = convict({
     version: {
       doc: 'The version of the fronthub service.',
       format: String,
-      default: '6.2.3', // TODO: mudar, não está funcionando
+      default: '6.2.3',
       env: 'FRONTHUB_VERSION',
     },
     require_version: {
       doc: 'The version of the require fronthub service.',
       format: String,
-      default: '6.2.3', // TODO: mudar, não está funcionando
+      default: '6.2.3',
       env: 'FRONTHUB_REQUIRE_VERSION',
     },
   }
