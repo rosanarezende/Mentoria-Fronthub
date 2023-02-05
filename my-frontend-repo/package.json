@@ -1,15 +1,13 @@
 {
   "name": "@resultadosdigitais/my-frontend-repo",
   "version": "1.0.0",
+  "workspaces": ["packages/*"],
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "bootstrap": "lerna bootstrap --loglevel=warn",
-    "prepare": "yarn bootstrap",
     "preinstall": "node ./ci/here-we-use-yarn.js && ./ci/setup-jfrog-npm.sh",
-    "start": "./ci/run-scoped-lerna.sh",
-    "add:dep": "./ci/run-add-lerna.sh",
-    "add:dev:dep": "./ci/run-add-dev-lerna.sh"
+    "main": "yarn workspace @resultadosdigitais/my-frontend-repo-main",
+    "application-host": "yarn workspace @resultadosdigitais/my-frontend-repo-application-host"
   },
   "fronthub-dependencies": [
     "@resultadosdigitais/tangram-components",
