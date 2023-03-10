@@ -1,0 +1,10 @@
+{
+  "Welcome": {
+    "Title": "FrontHub App",
+    "Summary": "Edit <0>src/index.js</0> and save to reload.",
+    "CallToAction": "Go to docs",
+    "Formatting": {
+      "Date": "{{-value, TIMEZONE_DATE_HOUR_FORMAT}}"
+    }
+  }
+}
