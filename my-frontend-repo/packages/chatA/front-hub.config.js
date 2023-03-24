@@ -7,13 +7,6 @@ module.exports = {
   version: 'auto',
   context: {
     user: {},
-    domains: {
-      plg: {
-        experiments: {
-          someXP: 'variant',
-        },
-      },
-    },
   },
   metadata: {
     maintainers: [],
@@ -34,8 +27,12 @@ module.exports = {
     grants: {},
   },
   events: {
-    listeners: [],
-    emitters: [],
+    listeners: [
+      'chat:newMessage',
+      'plg:chat/newMessage',
+      'plg/chat:newMessage',
+    ],
+    emitters: ['chat:newMessage', 'plg:chat/newMessage', 'plg/chat:newMessage'],
   },
   services: [],
 }

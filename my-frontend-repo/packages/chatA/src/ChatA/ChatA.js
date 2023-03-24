@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components'
+import { useCommunication } from '@resultadosdigitais/front-hub/react'
+
 // import { Trans, useTranslation } from 'react-i18next'
 import {
   Form,
@@ -19,12 +21,21 @@ const Root = styled.div`
 `
 
 function ChatA() {
+  const { emit, useListener } = useCommunication('chat')
   const [mensagem, setMensagem] = useState('')
   const [listaDeMensagens, setListaDeMensagens] = useState([])
 
+  useListener(
+    'newMessage',
+    ({ message, chatName }) => {
+      setListaDeMensagens([...listaDeMensagens, `${chatName}: ${message}`])
+    },
+    [listaDeMensagens],
+  )
+
   const handleSendMessge = e => {
     e.preventDefault()
-    setListaDeMensagens([...listaDeMensagens, mensagem])
+    emit('newMessage', { message: mensagem, chatName: 'chatA' })
     setMensagem('')
   }
 
